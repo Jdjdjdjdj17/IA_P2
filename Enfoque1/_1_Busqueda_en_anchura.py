@@ -37,7 +37,7 @@ def bfs_camino(grafo, inicio, destino):
                 nuevo_camino = camino + [vecino]  # Extiende el camino
                 cola.append(nuevo_camino)
 
-    return None  # No hay camino
+    return None  # No hay camino 
 
 resultado = bfs_camino(grafo, 'A', destino)
 print("Camino encontrado:", resultado)
