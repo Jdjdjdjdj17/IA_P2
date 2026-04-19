@@ -1,5 +1,5 @@
 import heapq
-from grafo_datos import GRAFO, INICIO, DESTINO
+from grafo_datos_2 import GRAFO, INICIO, DESTINO
 
 print(f"Grafo cargado: {GRAFO}  Inicio: {INICIO}  |  Destino: {DESTINO}")
 
