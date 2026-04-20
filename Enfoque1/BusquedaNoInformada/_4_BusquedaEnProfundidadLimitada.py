@@ -1,13 +1,13 @@
-from grafo_datos_3 import GRAFO, INICIO, DESTINO
+from grafo_datos_4 import GRAFO, INICIO, DESTINO
 
 print(f"Grafo: {GRAFO}  Inicio: {INICIO}  |  Destino: {DESTINO}")
 
-def dfs(grafo, inicio, destino, visitado=None):
+def dfsl(grafo, inicio, destino, visitado=None):
     visitado = set()
     pila = [[inicio]]
+    limite = int(input("Dame un nivel limite: "))
 
     while pila:
-
         camino = pila.pop()
         nodo = camino[-1]
 
@@ -18,6 +18,9 @@ def dfs(grafo, inicio, destino, visitado=None):
 
         if nodo == destino:
             return camino
+
+        if  len(camino) - 1 == limite:
+            continue
         
         for vecino in grafo[nodo]:
             if vecino not in visitado:
@@ -25,7 +28,7 @@ def dfs(grafo, inicio, destino, visitado=None):
 
     return None
 
-camino = dfs(GRAFO, INICIO, DESTINO)
+camino = dfsl(GRAFO, INICIO, DESTINO)
 
 if camino:
     print(f"Camino: {' → '.join(camino)}")

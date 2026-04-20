@@ -32,5 +32,3 @@ if camino:
     print("El camino mas barato es:", camino)
 else:
     print("No se encontró camino.")
-
-print("Este espacio es para el algoritmo de Busqueda en anchura de costo uniforme")
