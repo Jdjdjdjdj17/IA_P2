@@ -19,7 +19,7 @@ agregar_arista(grafo, 'B', 'E')
 agregar_arista(grafo, 'C', 'F')
 
 # ---- BFS con camino ----
-def bfs(grafo, inicio, destino):
+def bfs_camino(grafo, inicio, destino):
     visitados = set()
     cola = deque([[inicio]])       # La cola guarda caminos, no nodos solos
     visitados.add(inicio)
@@ -39,5 +39,5 @@ def bfs(grafo, inicio, destino):
 
     return None  # No hay camino
 
-resultado = bfs(grafo, 'A', destino)
+resultado = bfs_camino(grafo, 'A', destino)
 print("Camino encontrado:", resultado)
