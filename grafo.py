@@ -156,7 +156,7 @@ def visualizar(G, modo, inicio, destino, camino=None, archivo='grafo_temp.png'):
     if modo == 'pesos':
         pesos = nx.get_edge_attributes(G, 'weight')
         nx.draw_networkx_edge_labels(G, pos, edge_labels=pesos,
-                                     font_color='#ecf0f1',
+                                     font_color='black',
                                      font_size=11, ax=ax)
 
     parches = [
