@@ -32,12 +32,12 @@ def h(nodo):
     return HEURISTICA.get(nodo, 0)
  
 
-def voraz(grafo, inicio, destino):
+def a_estrella(grafo, inicio, destino):
     cola = [(h(inicio), 0, [inicio])]    
     visitado = set()
 
     while cola:              
-        _,  costo, camino = heapq.heappop(cola)
+        f,  g, camino = heapq.heappop(cola)
         nodo = camino[-1]
 
         if nodo in visitado:
@@ -45,13 +45,14 @@ def voraz(grafo, inicio, destino):
         visitado.add(nodo)    
 
         if nodo == destino:
-            print("Costo total voraz: ", costo)
+            print("Costo total A*: ", g)
             return camino     
 
         for vecino, peso in grafo[nodo]:
             if vecino not in visitado:
-                nuevo_costo = costo + peso
-                heapq.heappush(cola, (h(vecino), costo + peso, camino + [vecino]))
+                G = g + peso
+                F = h(vecino) + G
+                heapq.heappush(cola, (F, G, camino + [vecino]))
 
     return None               
     
@@ -80,7 +81,7 @@ def ucs(grafo, inicio, destino):
     return None               
 
 
-camino_voraz = voraz(GRAFO, INICIO, DESTINO)
+camino_a_estrella = a_estrella(GRAFO, INICIO, DESTINO)
 camino_ucs= ucs(GRAFO, INICIO, DESTINO)
 
 if camino_ucs:
@@ -88,8 +89,7 @@ if camino_ucs:
 else:
     print("No se encontró camino.")
 
-if camino_voraz:
-    print("En voraz el camino mas rapido es:", camino_voraz)
+if camino_a_estrella:
+    print("En A* el camino mas rapido es:", camino_a_estrella)
 else:
     print("No se encontró camino.")
-    
