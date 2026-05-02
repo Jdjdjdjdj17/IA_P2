@@ -1,4 +1,5 @@
 def sat(numeros, objetivo):
+    
     # 1. Ordenar es obligatorio para que los punteros funcionen
     numeros.sort() 
     

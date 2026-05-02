@@ -1,8 +1,8 @@
 "Checa si el numero puede ir en una posicion"
 
 def seguro(tablero, fila, col, num) :
+    
     #Revisa cuadro de 9x9
-
     cuadro_f = (fila // 3) * 3
     cuadro_c = (col // 3) * 3
 

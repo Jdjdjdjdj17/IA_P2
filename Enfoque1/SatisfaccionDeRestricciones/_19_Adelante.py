@@ -33,7 +33,7 @@ def adelante(fila_actual, dominios):
             if diag_der in dominios_futuro[fila_siguiente]:
                 dominios_futuro[fila_siguiente].remove(diag_der)
             
-            # PODA: Si una fila del futuro se quedó sin opciones, esta rama no sirve
+            # Poda: Si una fila del futuro se quedó sin opciones, esta rama no sirve
             if not dominios_futuro[fila_siguiente]:
                 posible_continuar = False
                 break
