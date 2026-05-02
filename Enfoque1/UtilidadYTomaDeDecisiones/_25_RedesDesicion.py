@@ -31,13 +31,12 @@ def ejecutar_red_decision():
         # Escenario 2: Muchos conflictos (caos)
         utilidad_caos = obtener_puntos(random.randint(2, 3))
         
-        # Ecuación de la Utilidad Esperada:
-        # EU = (P1 * U1) + (P2 * U2)
+        # Ecuación de la Utilidad Esperada: EU = (P1 * U1) + (P2 * U2)
         utilidad_esperada = (prob_estable * utilidad_estable) + (prob_caos * utilidad_caos)
         
         print("Columna " + str(col) + " tiene utilidad de: " + str(utilidad_esperada))
         
-        # Buscamos el máximo (clásico algoritmo de búsqueda de mayor en un arreglo)
+
         if utilidad_esperada > mejor_utilidad_esperada:
             mejor_utilidad_esperada = utilidad_esperada
             mejor_columna = col
